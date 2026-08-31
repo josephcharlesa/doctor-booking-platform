@@ -1,12 +1,12 @@
-# CareConnect — Doctor Booking Platform
+# Mind Architects — Doctor Booking Platform
 
-CareConnect is a web-first doctor booking and patient-care platform designed to grow into an Android application.
+Mind Architects is a web-first doctor booking and patient-care platform designed to grow into an Android application.
 
-## V2 implemented
+## Current prototype
 
 - Responsive public landing page
 - Doctor discovery cards and appointment slot UI
-- Working demo booking modal
+- Demo booking flow
 - Demo patient registration/login flow
 - Demo Patient, Doctor and Admin dashboards
 - Demo payment step with Razorpay/UPI integration placeholder
@@ -66,7 +66,7 @@ GitHub is for source code, migrations, documentation and configuration templates
 
 ## Run locally
 
-The current V2 prototype is plain HTML/CSS/JavaScript and can be opened directly from `index.html` or served with any static HTTP server.
+The current prototype is plain HTML/CSS/JavaScript and can be opened from `index.html` or served with any static HTTP server.
 
 ## Important
 
@@ -74,4 +74,4 @@ The current dashboards and booking/payment flows are **demo-only**. They do not 
 
 ## Next implementation milestone
 
-Convert the static prototype into a production application with a real database, API, authentication and validated booking/payment workflows. Keep all secrets in deployment environment variables, never in Git.
+Convert the prototype into a production application with a real database, API, authentication and validated booking/payment workflows. Keep all secrets in deployment environment variables, never in Git.
