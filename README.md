@@ -1,41 +1,77 @@
 # CareConnect — Doctor Booking Platform
 
-A responsive V1 front-end prototype for a doctor booking and patient care platform.
+CareConnect is a web-first doctor booking and patient-care platform designed to grow into an Android application.
 
-## Current V1
+## V2 implemented
 
-- Responsive landing page
-- Doctor discovery section
-- Appointment time-slot interaction
-- Patient / Doctor / Admin portal entry points
-- Booking journey overview
-- No live patient or medical data
-- Static front end: HTML, CSS and JavaScript
+- Responsive public landing page
+- Doctor discovery cards and appointment slot UI
+- Working demo booking modal
+- Demo patient registration/login flow
+- Demo Patient, Doctor and Admin dashboards
+- Demo payment step with Razorpay/UPI integration placeholder
+- Meeting and consultation action placeholders
+- Mobile responsive layout
+- Safe `.gitignore` for secrets and dependencies
 
-## Planned architecture
+## Planned production architecture
 
-- Front end: React / Next.js
-- API: Node.js / TypeScript
+- Frontend: React / Next.js or equivalent production SPA
+- Backend: Node.js / TypeScript API
 - Database: PostgreSQL
-- Authentication: role-based patient, doctor and admin accounts
-- Payments: Razorpay / UPI
-- Meetings: Google Meet / Zoom integration
-- Notifications: WhatsApp Business + email/SMS
-- Deployment: GitHub + secure production hosting
+- Authentication: secure role-based patient, doctor and admin accounts
+- Payments: Razorpay / UPI with server-side payment verification and webhooks
+- Meetings: Google Meet / Zoom
+- Notifications: WhatsApp Business Platform + email/SMS/push
+- Deployment: managed HTTPS hosting + secured managed database
 
 ## Data safety
 
-GitHub stores source code, schema and configuration templates. Production patient, doctor, appointment, medical and payment data must live in a secured production database and must never be committed to this repository.
+GitHub is for source code, migrations, documentation and configuration templates. Do **not** commit patient medical records, prescriptions, diagnosis data, payment credentials, API secrets or production database exports to this repository.
+
+## Production modules
+
+### Patient
+- Registration/login
+- Doctor search and filters
+- Availability and booking
+- Payment
+- Appointment history
+- Online consultation
+- Prescriptions
+- Diagnosis
+- Treatment plans and progress
+- Cancellation/rescheduling
+
+### Doctor
+- Secure login
+- Profile and verification
+- Availability/calendar
+- Appointment management
+- Patient list
+- Consultation workspace
+- Diagnosis and clinical notes
+- Prescription creation
+- Treatment plans
+- Follow-up scheduling
+
+### Admin
+- Doctor onboarding/verification
+- Patient management
+- Appointment oversight
+- Payment/refund oversight
+- Reports
+- Platform settings
+- Audit logs
 
 ## Run locally
 
-Open `index.html` directly in a browser, or serve the folder with any static HTTP server.
+The current V2 prototype is plain HTML/CSS/JavaScript and can be opened directly from `index.html` or served with any static HTTP server.
 
-## Next build
+## Important
 
-1. Convert the UI to a production application.
-2. Add authentication and role-based portals.
-3. Add PostgreSQL schema and API.
-4. Add doctor availability and real booking logic.
-5. Add payment and meeting integrations.
-6. Add audit logging, validation, security controls and deployment configuration.
+The current dashboards and booking/payment flows are **demo-only**. They do not send data to a server and must not be used with real patient information.
+
+## Next implementation milestone
+
+Convert the static prototype into a production application with a real database, API, authentication and validated booking/payment workflows. Keep all secrets in deployment environment variables, never in Git.
