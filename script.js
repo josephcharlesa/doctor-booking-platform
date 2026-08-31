@@ -1,35 +1,13 @@
-const toast = document.getElementById('toast');
-let toastTimer;
-
-function showToast(message) {
-  toast.textContent = message;
-  toast.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
-}
-
-document.querySelectorAll('[data-scroll]').forEach((button) => {
-  button.addEventListener('click', () => document.getElementById(button.dataset.scroll)?.scrollIntoView({ behavior: 'smooth' }));
-});
-
-document.querySelectorAll('.slot').forEach((slot) => {
-  slot.addEventListener('click', () => {
-    document.querySelectorAll('.slot').forEach((item) => item.classList.remove('slot-active'));
-    slot.classList.add('slot-active');
-    showToast(`${slot.textContent.trim()} selected`);
-  });
-});
-
-document.querySelectorAll('[data-action]').forEach((button) => {
-  button.addEventListener('click', () => {
-    const action = button.dataset.action;
-    const messages = {
-      login: 'Login portal will be connected in the next build.',
-      signup: 'Account registration will be connected in the next build.',
-      doctor: 'Doctor onboarding will be connected in the next build.',
-      browse: 'Doctor search will be connected to the live database in the next build.',
-      book: 'Booking flow selected — authentication and payment are next.'
-    };
-    showToast(messages[action] || 'This feature is coming next.');
-  });
-});
+const toast=document.getElementById('toast');const modal=document.getElementById('app-modal');const modalContent=document.getElementById('modal-content');let toastTimer;
+function showToast(message){toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),2600)}
+function openModal(html){modalContent.innerHTML=html;modal.classList.add('open');modal.setAttribute('aria-hidden','false');modal.querySelector('input,select,button:not(.modal-close)')?.focus()}
+function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');modalContent.innerHTML=''}
+const form=(title,role)=>`<h2>${title}</h2><p>Demo account setup for the ${role} portal.</p><form class="form-grid" id="demo-form"><label>Full name<input required name="name" placeholder="Enter full name"></label><label>Mobile number<input required name="mobile" inputmode="tel" placeholder="10-digit mobile number"></label><label>Email<input required type="email" name="email" placeholder="you@example.com"></label><button class="btn btn-primary" type="submit">Continue</button></form><div class="notice">This is a prototype. No information is sent to a server.</div>`;
+const patient=`<h2>Patient Dashboard</h2><p>Your care at a glance.</p><div class="dashboard"><div class="dash-row"><div><strong>Dr. Ananya Rao</strong><div class="dash-label">General Physician · Today, 10:30 AM</div></div><span class="pill">Confirmed</span></div><div class="dash-row"><div><strong>Prescription</strong><div class="dash-label">Latest consultation · 31 Aug 2026</div></div><span class="pill">View</span></div><div class="dash-row"><div><strong>Treatment progress</strong><div class="dash-label">2 of 4 steps completed</div></div><span class="pill">50%</span></div><button class="btn btn-primary full" data-demo="meeting">Join online consultation</button></div>`;
+const doctor=`<h2>Doctor Dashboard</h2><p>Today's schedule and patient care.</p><div class="dashboard"><div class="dash-row"><div><strong>Today</strong><div class="dash-label">8 appointments · 5 confirmed</div></div><span class="pill">8</span></div><div class="dash-row"><div><strong>Next patient</strong><div class="dash-label">10:30 AM · Ananya Rao</div></div><span class="pill">Online</span></div><div class="dash-row"><div><strong>Availability</strong><div class="dash-label">Mon–Fri · 9 AM–1 PM, 4 PM–8 PM</div></div><span class="pill">Active</span></div><button class="btn btn-primary full" data-demo="consultation">Open consultation</button></div>`;
+const admin=`<h2>Admin Dashboard</h2><p>Platform overview.</p><div class="dashboard"><div class="dash-row"><div><strong>Doctors</strong><div class="dash-label">24 active · 3 pending verification</div></div><span class="pill">24</span></div><div class="dash-row"><div><strong>Appointments</strong><div class="dash-label">Today · confirmed bookings</div></div><span class="pill">86</span></div><div class="dash-row"><div><strong>Payments</strong><div class="dash-label">Today's collected demo value</div></div><span class="pill">₹48,600</span></div><button class="btn btn-secondary full" data-demo="report">View reports</button></div>`;
+function booking(doctorName='Dr. Ananya Rao'){openModal(`<h2>Book ${doctorName}</h2><p>Select a consultation slot.</p><div class="slot-grid"><button class="slot slot-active">10:30 AM</button><button class="slot">11:00 AM</button><button class="slot">11:30 AM</button><button class="slot">4:00 PM</button><button class="slot">4:30 PM</button><button class="slot">5:00 PM</button></div><div class="notice">Consultation fee will be shown before payment. Razorpay/UPI will be connected in the next integration step.</div><button class="btn btn-primary full" data-demo="payment">Continue to payment</button>`)}
+document.addEventListener('click',e=>{const close=e.target.closest('[data-close]');if(close)return closeModal();const slot=e.target.closest('.slot');if(slot){document.querySelectorAll('.modal .slot').forEach(x=>x.classList.remove('slot-active'));slot.classList.add('slot-active');showToast(`${slot.textContent.trim()} selected`);return}const action=e.target.closest('[data-action]')?.dataset.action;const doctorName=e.target.closest('[data-doctor]')?.dataset.doctor;if(action){if(action==='book')return booking(doctorName);if(action==='login')return openModal(form('Welcome back','account'));if(action==='signup')return openModal(form('Create your account','patient'));if(action==='doctor')return openModal(form('Doctor onboarding','doctor'));if(action==='patient')return openModal(patient);if(action==='doctor-dashboard')return openModal(doctor);if(action==='admin')return openModal(admin);if(action==='browse')return showToast('Doctor search is ready for database connection.')}const demo=e.target.closest('[data-demo]')?.dataset.demo;if(demo){if(demo==='payment')openModal(`<h2>Secure Payment</h2><p>Payment gateway integration placeholder.</p><div class="notice">UPI and Razorpay checkout will be connected here. Never expose gateway secret keys in the browser.</div><button class="btn btn-primary full" data-demo="paid">Use demo payment</button>`);else if(demo==='paid'){closeModal();showToast('Demo payment successful — booking confirmed.')}else if(demo==='meeting'){showToast('Demo meeting link will open here.')}else if(demo==='consultation'){showToast('Consultation workspace will open here.')}else if(demo==='report'){showToast('Reports module will open here.')}}});
+document.querySelectorAll('[data-scroll]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.scroll)?.scrollIntoView({behavior:'smooth'})));
+document.addEventListener('submit',e=>{if(e.target.id==='demo-form'){e.preventDefault();closeModal();showToast('Demo account created. Backend authentication comes next.')}});
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal()});
