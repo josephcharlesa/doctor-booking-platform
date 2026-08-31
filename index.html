@@ -1,192 +1,40 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0f766e" />
-    <meta name="description" content="A modern doctor appointment and patient care platform." />
-    <title>CareConnect — Doctor Booking Platform</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <a class="brand" href="#top" aria-label="CareConnect home">
-          <span class="brand-mark">+</span>
-          <span>CareConnect</span>
-        </a>
-        <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#doctors">Find Doctors</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#portals">Portals</a>
-        </nav>
-        <div class="nav-actions">
-          <button class="btn btn-ghost" data-action="login">Login</button>
-          <button class="btn btn-primary" data-action="signup">Get Started</button>
-        </div>
-      </div>
-    </header>
-
-    <main id="top">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <div class="eyebrow"><span class="status-dot"></span> Simple care. One place.</div>
-            <h1>Book care, meet your doctor, and track your treatment.</h1>
-            <p class="hero-text">
-              CareConnect brings appointments, payments, online consultations, prescriptions,
-              diagnosis, and treatment progress into one secure patient experience.
-            </p>
-            <div class="hero-actions">
-              <button class="btn btn-primary btn-lg" data-scroll="doctors">Find a Doctor</button>
-              <button class="btn btn-secondary btn-lg" data-action="doctor">I’m a Doctor</button>
-            </div>
-            <div class="trust-row">
-              <span>✓ Flexible appointments</span>
-              <span>✓ Online consultations</span>
-              <span>✓ Secure records</span>
-            </div>
-          </div>
-
-          <div class="booking-card" aria-label="Sample appointment booking card">
-            <div class="card-topline">
-              <div>
-                <div class="mini-label">NEXT AVAILABLE</div>
-                <h3>Dr. Ananya Rao</h3>
-                <p>General Physician · 12+ years</p>
-              </div>
-              <div class="avatar">AR</div>
-            </div>
-            <div class="rating-row"><span>★ 4.9</span><span>1,248 consultations</span></div>
-            <div class="booking-divider"></div>
-            <div class="mini-label">CHOOSE A TIME</div>
-            <div class="slot-grid">
-              <button class="slot">10:00 AM</button>
-              <button class="slot slot-active">10:30 AM</button>
-              <button class="slot">11:00 AM</button>
-              <button class="slot">11:30 AM</button>
-              <button class="slot">4:00 PM</button>
-              <button class="slot">4:30 PM</button>
-            </div>
-            <button class="btn btn-primary full" data-action="book">Continue to Booking</button>
-            <p class="secure-note">🔒 Demo booking flow — payment and account setup come next.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="stats-strip">
-        <div class="container stats-grid">
-          <div><strong>24/7</strong><span>Booking access</span></div>
-          <div><strong>UPI</strong><span>Payment ready</span></div>
-          <div><strong>Meet / Zoom</strong><span>Online consultations</span></div>
-          <div><strong>3 portals</strong><span>Admin · Doctor · Patient</span></div>
-        </div>
-      </section>
-
-      <section class="section" id="doctors">
-        <div class="container">
-          <div class="section-heading">
-            <div>
-              <div class="eyebrow">Find the right care</div>
-              <h2>Popular specialists</h2>
-            </div>
-            <button class="btn btn-ghost" data-action="browse">Browse all doctors →</button>
-          </div>
-          <div class="doctor-grid">
-            <article class="doctor-card">
-              <div class="doctor-avatar">DR</div>
-              <div class="doctor-body">
-                <h3>Dr. Rahul Menon</h3>
-                <p class="specialty">Dermatologist</p>
-                <div class="doctor-meta"><span>★ 4.8</span><span>₹700</span><span>Online</span></div>
-                <button class="btn btn-secondary full" data-action="book">View availability</button>
-              </div>
-            </article>
-            <article class="doctor-card">
-              <div class="doctor-avatar purple">PS</div>
-              <div class="doctor-body">
-                <h3>Dr. Priya Shah</h3>
-                <p class="specialty">Paediatrician</p>
-                <div class="doctor-meta"><span>★ 4.9</span><span>₹800</span><span>Clinic + Online</span></div>
-                <button class="btn btn-secondary full" data-action="book">View availability</button>
-              </div>
-            </article>
-            <article class="doctor-card">
-              <div class="doctor-avatar amber">VK</div>
-              <div class="doctor-body">
-                <h3>Dr. Vikram Kumar</h3>
-                <p class="specialty">Orthopaedic Specialist</p>
-                <div class="doctor-meta"><span>★ 4.7</span><span>₹900</span><span>Online</span></div>
-                <button class="btn btn-secondary full" data-action="book">View availability</button>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section soft" id="how-it-works">
-        <div class="container">
-          <div class="section-heading centered">
-            <div>
-              <div class="eyebrow">A smoother patient journey</div>
-              <h2>From booking to follow-up</h2>
-              <p>Designed around the appointment lifecycle, so every step stays connected.</p>
-            </div>
-          </div>
-          <div class="steps-grid">
-            <div class="step-card"><span class="step-number">01</span><h3>Choose a doctor</h3><p>Search by speciality, fee, availability, and consultation mode.</p></div>
-            <div class="step-card"><span class="step-number">02</span><h3>Book & pay</h3><p>Reserve a slot and complete payment using supported online methods.</p></div>
-            <div class="step-card"><span class="step-number">03</span><h3>Meet online</h3><p>Use the doctor’s Google Meet or Zoom link for your session.</p></div>
-            <div class="step-card"><span class="step-number">04</span><h3>Track care</h3><p>See prescriptions, diagnosis, treatment steps, and future follow-ups.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="portals">
-        <div class="container">
-          <div class="section-heading">
-            <div>
-              <div class="eyebrow">One platform, role-based access</div>
-              <h2>Built for every side of care</h2>
-            </div>
-          </div>
-          <div class="portal-grid">
-            <article class="portal-card featured">
-              <div class="portal-icon">P</div>
-              <div><h3>Patient Portal</h3><p>Manage appointments, sessions, prescriptions and treatment progress from one dashboard.</p></div>
-              <button class="text-link" data-action="signup">Create patient account →</button>
-            </article>
-            <article class="portal-card">
-              <div class="portal-icon">D</div>
-              <div><h3>Doctor Portal</h3><p>Manage availability, appointments, patients, consultation notes and treatment plans.</p></div>
-              <button class="text-link" data-action="doctor">Doctor access →</button>
-            </article>
-            <article class="portal-card">
-              <div class="portal-icon">A</div>
-              <div><h3>Admin Portal</h3><p>Oversee doctors, patients, payments, cancellations, reports and platform settings.</p></div>
-              <button class="text-link" data-action="login">Admin login →</button>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="cta-section">
-        <div class="container cta-card">
-          <div><div class="eyebrow">V1 prototype</div><h2>Ready to build the real workflow?</h2><p>The next layer will connect the UI to authentication, database, Razorpay, WhatsApp, and meeting providers.</p></div>
-          <button class="btn btn-primary btn-lg" data-action="signup">Start with the portal</button>
-        </div>
-      </section>
-    </main>
-
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-    <footer class="site-footer">
-      <div class="container footer-wrap">
-        <div><strong>CareConnect</strong><span>© 2026 Doctor Booking Platform</span></div>
-        <div><span>Prototype only</span><span>•</span><span>No live medical data</span></div>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0f766e"><meta name="description" content="CareConnect doctor booking and patient care platform">
+  <title>CareConnect — Doctor Booking Platform</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header"><div class="container nav-wrap">
+  <a class="brand" href="#top"><span class="brand-mark">+</span><span>CareConnect</span></a>
+  <nav class="nav-links"><a href="#doctors">Find Doctors</a><a href="#how-it-works">How It Works</a><a href="#portals">Portals</a></nav>
+  <div class="nav-actions"><button class="btn btn-ghost" data-action="login">Login</button><button class="btn btn-primary" data-action="signup">Get Started</button></div>
+</div></header>
+<main id="top">
+<section class="hero"><div class="container hero-grid"><div class="hero-copy">
+  <div class="eyebrow"><span class="status-dot"></span> Simple care. One place.</div>
+  <h1>Book care, meet your doctor, and track your treatment.</h1>
+  <p class="hero-text">Appointments, payments, online consultations, prescriptions, diagnosis and treatment progress in one secure patient experience.</p>
+  <div class="hero-actions"><button class="btn btn-primary btn-lg" data-scroll="doctors">Find a Doctor</button><button class="btn btn-secondary btn-lg" data-action="doctor">I’m a Doctor</button></div>
+  <div class="trust-row"><span>✓ Flexible appointments</span><span>✓ Online consultations</span><span>✓ Secure records</span></div>
+</div><div class="booking-card"><div class="card-topline"><div><div class="mini-label">NEXT AVAILABLE</div><h3>Dr. Ananya Rao</h3><p>General Physician · 12+ years</p></div><div class="avatar">AR</div></div><div class="rating-row"><span>★ 4.9</span><span>1,248 consultations</span></div><div class="booking-divider"></div><div class="mini-label">CHOOSE A TIME</div><div class="slot-grid"><button class="slot">10:00 AM</button><button class="slot slot-active">10:30 AM</button><button class="slot">11:00 AM</button><button class="slot">11:30 AM</button><button class="slot">4:00 PM</button><button class="slot">4:30 PM</button></div><button class="btn btn-primary full" data-action="book">Continue to Booking</button><p class="secure-note">🔒 Demo data — live payments are added after setup.</p></div></div></section>
+<section class="stats-strip"><div class="container stats-grid"><div><strong>24/7</strong><span>Booking access</span></div><div><strong>UPI</strong><span>Payment ready</span></div><div><strong>Meet / Zoom</strong><span>Online consultations</span></div><div><strong>3 portals</strong><span>Admin · Doctor · Patient</span></div></div></section>
+<section class="section" id="doctors"><div class="container"><div class="section-heading"><div><div class="eyebrow">Find the right care</div><h2>Popular specialists</h2></div><button class="btn btn-ghost" data-action="browse">Browse all doctors →</button></div><div class="doctor-grid">
+<article class="doctor-card"><div class="doctor-avatar">DR</div><div class="doctor-body"><h3>Dr. Rahul Menon</h3><p class="specialty">Dermatologist</p><div class="doctor-meta"><span>★ 4.8</span><span>₹700</span><span>Online</span></div><button class="btn btn-secondary full" data-action="book" data-doctor="Dr. Rahul Menon">View availability</button></div></article>
+<article class="doctor-card"><div class="doctor-avatar purple">PS</div><div class="doctor-body"><h3>Dr. Priya Shah</h3><p class="specialty">Paediatrician</p><div class="doctor-meta"><span>★ 4.9</span><span>₹800</span><span>Clinic + Online</span></div><button class="btn btn-secondary full" data-action="book" data-doctor="Dr. Priya Shah">View availability</button></div></article>
+<article class="doctor-card"><div class="doctor-avatar amber">VK</div><div class="doctor-body"><h3>Dr. Vikram Kumar</h3><p class="specialty">Orthopaedic Specialist</p><div class="doctor-meta"><span>★ 4.7</span><span>₹900</span><span>Online</span></div><button class="btn btn-secondary full" data-action="book" data-doctor="Dr. Vikram Kumar">View availability</button></div></article>
+</div></div></section>
+<section class="section soft" id="how-it-works"><div class="container"><div class="section-heading centered"><div><div class="eyebrow">A smoother patient journey</div><h2>From booking to follow-up</h2><p>Every appointment stays connected from first booking to treatment review.</p></div></div><div class="steps-grid"><div class="step-card"><span class="step-number">01</span><h3>Choose a doctor</h3><p>Search by speciality, fee, availability and consultation mode.</p></div><div class="step-card"><span class="step-number">02</span><h3>Book & pay</h3><p>Reserve a slot and complete payment using supported online methods.</p></div><div class="step-card"><span class="step-number">03</span><h3>Meet online</h3><p>Use Google Meet or Zoom for your online consultation.</p></div><div class="step-card"><span class="step-number">04</span><h3>Track care</h3><p>See prescriptions, diagnosis, treatment steps and follow-ups.</p></div></div></div></section>
+<section class="section" id="portals"><div class="container"><div class="section-heading"><div><div class="eyebrow">Role-based access</div><h2>Built for every side of care</h2></div></div><div class="portal-grid">
+<article class="portal-card featured"><div class="portal-icon">P</div><div><h3>Patient Portal</h3><p>Appointments, sessions, prescriptions and treatment progress.</p></div><button class="text-link" data-action="patient">Open patient demo →</button></article>
+<article class="portal-card"><div class="portal-icon">D</div><div><h3>Doctor Portal</h3><p>Availability, appointments, patients, notes and treatment plans.</p></div><button class="text-link" data-action="doctor-dashboard">Open doctor demo →</button></article>
+<article class="portal-card"><div class="portal-icon">A</div><div><h3>Admin Portal</h3><p>Doctors, patients, appointments, payments and reports.</p></div><button class="text-link" data-action="admin">Open admin demo →</button></article>
+</div></div></section>
+<section class="cta-section"><div class="container cta-card"><div><div class="eyebrow">V1 working prototype</div><h2>The foundation is ready to grow.</h2><p>Next integrations: real authentication, PostgreSQL, Razorpay, WhatsApp Business and meeting providers.</p></div><button class="btn btn-primary btn-lg" data-action="signup">Create an account</button></div></section>
+</main>
+<div id="app-modal" class="modal" aria-hidden="true"><div class="modal-backdrop" data-close></div><div class="modal-panel" role="dialog" aria-modal="true"><button class="modal-close" data-close aria-label="Close">×</button><div id="modal-content"></div></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<footer class="site-footer"><div class="container footer-wrap"><div><strong>CareConnect</strong><span>© 2026 Doctor Booking Platform</span></div><div><span>Prototype</span><span>•</span><span>No live medical data</span></div></div></footer>
+<script src="script.js"></script>
+</body></html>
